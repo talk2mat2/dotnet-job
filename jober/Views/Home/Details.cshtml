@@ -1,0 +1,24 @@
+﻿
+
+<div class=" bg-white home p-2 ">
+    <h4 style="text-align:center">@ViewBag.result.title</h4>
+
+    <div class="card mt-5 " style="">
+        @*<img class="card-img-top" src="..." alt="Card image cap">*@
+        <div class="card-body">
+            
+            <p class="card-text">
+                @ViewBag.result.body
+
+            </p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item " style="font-size:10px;"> Lagos, enginerring</li>
+
+        </ul>
+        <div class="card-body">
+            <a asp-controller="Home" asp-action="Index" class="card-link">go back</a>
+
+        </div>
+    </div>
+</div>

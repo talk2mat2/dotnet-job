@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<posts>
+
+<div class="home-search">
+    <h5 class="">Employee job</h5>
+    <form asp-controller="Home"  class="input-group " asp-action="Search" method="get">
+
+        <input name="search" type="search" class="form-control rounded" placeholder="Search posts" aria-label="Search" aria-describedby="search-addon" />
+        <button type="submit" class="btn btn-outline-primary">search</button>
+
+    </form>
+    <a class="mt-2" asp-controller="Createjob" asp-action="Index">Employer Post new job</a>
+</div>
+
+<div class=" bg-white home p-2">
+    <h4 style="text-align:center">Job Feeds</h4>
+    @foreach (var job in Model)
+    {
+        <div class="card my-3" style="">
+            @*<img class="card-img-top" src="..." alt="Card image cap">*@
+            <div class="card-body">
+                <h5 class="card-title">@job.title</h5>
+                <p class="card-text">
+
+                    @job.body.Substring(0, 40)
+                </p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item " style="font-size:10px;"> Lagos, enginerring</li>
+
+            </ul>
+            <div class="card-body">
+                <a asp-controller="Home" asp-action="Details" asp-route-id="@job.id" class="card-link">Card link</a>
+            
+            </div>
+        </div>
+    }
+</div>
