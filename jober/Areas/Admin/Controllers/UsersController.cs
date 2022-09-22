@@ -111,6 +111,7 @@ namespace jober.Areas.Admin.Controllers
             {
                 //means the user is autheticated;
                 IdentityUser currentUser = await _UserManager.FindByNameAsync(User.Identity.Name);
+                return View(currentUser);
             }
 
             return View();
